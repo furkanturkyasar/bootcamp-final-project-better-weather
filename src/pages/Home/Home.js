@@ -1,22 +1,19 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Login from "../Login";
 import Navbar from "../../components/Navbar";
 import Container from "../../components/Container";
+import UserContext from "../../context/UserContext";
 
 const Home = () => {
-  const [user, setUser] = useState({
-    username: "",
-    password: "",
-    isAuth: false,
-  });
+  const { user } = useContext(UserContext);
 
   return (
     <div>
       {!user.isAuth ? (
-        <Login user={user} setUser={setUser} />
+        <Login />
       ) : (
         <>
-          <Navbar user={user} setUser={setUser} />
+          <Navbar />
           <Container />
         </>
       )}

@@ -1,9 +1,12 @@
-import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import React from "react";
 
 const RightCard = () => {
+  let navigate = useNavigate();
+
   const showDetails = () => {
-    console.log("showing details");
+    navigate("/details");
   };
 
   return (

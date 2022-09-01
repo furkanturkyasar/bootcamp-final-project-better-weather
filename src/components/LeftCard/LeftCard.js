@@ -1,6 +1,6 @@
-import React from "react";
-import MinifiedCard from "../MinifiedCard";
 import { AiOutlineSearch, AiOutlineArrowRight } from "react-icons/ai";
+import MinifiedCard from "../MinifiedCard";
+import React from "react";
 
 const LeftCard = () => {
   return (

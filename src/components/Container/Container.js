@@ -1,4 +1,3 @@
-import React from "react";
 import LeftCard from "../LeftCard";
 import RightCard from "../RightCard";
 
