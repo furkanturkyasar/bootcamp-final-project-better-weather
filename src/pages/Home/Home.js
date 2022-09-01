@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Login from "../Login";
-import { toast } from "react-toastify";
+import Navbar from "../../components/Navbar";
+import Container from "../../components/Container";
 
 const Home = () => {
   const [user, setUser] = useState({
@@ -15,15 +16,8 @@ const Home = () => {
         <Login user={user} setUser={setUser} />
       ) : (
         <>
-          {toast.success("Successfully logged in", {
-            position: "top-right",
-            autoClose: 4000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          })}
+          <Navbar />
+          <Container />
         </>
       )}
     </div>

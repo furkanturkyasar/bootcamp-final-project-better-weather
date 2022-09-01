@@ -6,6 +6,8 @@ html {
     color: $eerie-black;
 }
 
+/* Login page starts */
+
 .login-container {
     margin:  5% 10%;
     box-sizing: border-box;
@@ -89,3 +91,53 @@ html {
         }
     }
 }
+
+/* Login page ends */
+
+/* Navbar starts */
+
+.nav-container {
+    margin: 5% 2%;
+    box-sizing: border-box;
+    // padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #header {
+        display: flex;
+        img {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            }
+        h1 {
+            position: absolute;
+            margin-left: 90px;
+            // left: 130px;
+            // color: $eerie-black;
+        }
+    }
+    .nav-right-section{
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lobster', cursive;
+            font-size: 16px;
+            // margin: 15px 0;
+            height: 30px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: white;
+            color: $eerie-black;
+            border: 2px solid $silver-chalice;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+
+/* Navbar ends */
