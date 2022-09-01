@@ -1,6 +1,12 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ user, setUser }) => {
+  const handleLogout = () => {
+    setUser({
+      isAuth: false,
+    });
+  };
+
   return (
     <div className="nav-container">
       <div id="header">
@@ -8,7 +14,7 @@ const Navbar = () => {
         <h1>Better Weather</h1>
       </div>
       <div className="nav-right-section">
-        <button>Log out</button>
+        <button onClick={handleLogout}>Log out</button>
       </div>
     </div>
   );

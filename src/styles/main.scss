@@ -76,7 +76,7 @@ html {
     .login-container{
         display: flex;
         padding: 0;
-        margin: 10% 3%;
+        margin: 200px 3%;
         #header {
             flex-basis: 30%;
             margin: auto;
@@ -139,5 +139,126 @@ html {
     }
 }
 
-
 /* Navbar ends */
+
+/* Container starts */
+
+.main-container {
+    // display: flex;
+    // box-sizing: border-box;
+    gap: 12px;
+    .left-card-container {
+        // background-color: gray;
+        margin-top: 17%;
+        margin-bottom: 17%;
+
+        p {
+            display: flex;
+            align-items: center;
+            span {
+                margin-right: 3px;
+            }
+        }
+        
+        .top{
+            display: flex;
+            justify-content: center;
+            height: 30px;
+            margin-bottom: 55px;
+            input {
+                border-radius: 5px;
+                border: 3px solid $silver-chalice;
+                width: 50%;
+            }
+            button {
+                border-radius: 5px;
+                border: 3px solid $silver-chalice;
+                margin-left: 3px;
+                cursor: pointer;
+                color: $eerie-black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 70px;
+            }
+        }
+        .minified-card{
+            padding: 20px;
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+            align-items: center;
+            .card {
+                background-color: $un-blue;
+                height: 150px;
+                width: 150px;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .right-card-container {
+        p {
+            display: flex;
+            align-items: center;
+            span {
+                margin-right: 3px;
+            }
+        }
+
+        .card{
+            background-color: $bdazzled-blue;
+            height: 300px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: 1110px) {
+    body{
+        margin: 5% 5% 0 5%;
+    }
+    .nav-container{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 200px;
+    }
+    .main-container{
+        display: flex;
+        margin-top: 10%;
+        .left-card-container{
+            flex-basis: 50%;
+            margin: 0;
+            .top{
+                margin: 0;
+                input{
+                    width: 100%;
+                }
+            }
+            .bottom{
+                margin-top: 35px;
+                .minified-card{
+                    display: flex;
+                    flex-direction: row;
+                    padding: 0;
+                    justify-content: space-between;
+                    .card{
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+        .right-card-container{
+            flex-basis: 50%;
+            margin: 0;
+            p{
+                display: none;
+            }
+        }
+    }
+}
+
+
+/* Container ends */

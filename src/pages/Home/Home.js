@@ -16,7 +16,7 @@ const Home = () => {
         <Login user={user} setUser={setUser} />
       ) : (
         <>
-          <Navbar />
+          <Navbar user={user} setUser={setUser} />
           <Container />
         </>
       )}
