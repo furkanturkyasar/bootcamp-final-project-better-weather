@@ -1,16 +1,21 @@
-import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
 import UserContext from "../../context/UserContext";
 
 const Navbar = () => {
-  const { user, setUser } = useContext(UserContext);
+  let navigation = useNavigate();
+  const { loggedIn, setLoggedIn } = useContext(UserContext);
 
-  localStorage.setItem("user", JSON.stringify(user));
+  useEffect(() => {
+    localStorage.setItem("auth", JSON.stringify(loggedIn));
+  }, [loggedIn]);
 
   const handleLogout = () => {
-    setUser({
-      ...user,
-      isAuth: false,
-    });
+    localStorage.removeItem("user");
+    setLoggedIn(false);
+    localStorage.removeItem("auth");
+
+    navigation("/");
   };
 
   return (

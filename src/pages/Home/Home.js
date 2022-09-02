@@ -5,11 +5,11 @@ import Container from "../../components/Container";
 import UserContext from "../../context/UserContext";
 
 const Home = () => {
-  const { user } = useContext(UserContext);
+  const { loggedIn } = useContext(UserContext);
 
   return (
     <div>
-      {!user.isAuth ? (
+      {!loggedIn ? (
         <Login />
       ) : (
         <>

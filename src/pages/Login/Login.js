@@ -3,9 +3,7 @@ import { useContext } from "react";
 import UserContext from "../../context/UserContext";
 
 const Login = () => {
-  const { user, setUser } = useContext(UserContext);
-
-  localStorage.setItem("user", JSON.stringify(user));
+  const { user, setUser, login } = useContext(UserContext);
 
   const userNameControl = (e) => {
     const trimmedUserName = e.target.value.trim();
@@ -25,14 +23,11 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (user.username === "admin" && user.password === "admin") {
-      setUser({
-        ...user,
-        isAuth: true,
-      });
+      login(user);
 
       toast.success("Logged in!", {
         position: "top-right",
