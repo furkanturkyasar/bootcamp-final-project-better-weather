@@ -92,7 +92,6 @@ html {
             position: absolute;
             margin-top: 70px;
             margin-left: 180px;
-            // font-size: 18px;
         }
         
     }
@@ -108,7 +107,7 @@ html {
             border-radius: 5px;
             background-color: white;
             color: $eerie-black;
-            border: 2px solid $silver-chalice;
+            border: 1px solid $silver-chalice;
             cursor: pointer;
             &:hover {
                 opacity: 0.7;
@@ -122,7 +121,7 @@ html {
 /* Container starts */
 
 .main-container {
-    gap: 12px;
+    gap: 50px;
     .left-card-container {
         margin-top: 17%;
         margin-bottom: 17%;
@@ -142,12 +141,13 @@ html {
             margin-bottom: 55px;
             input {
                 border-radius: 5px;
-                border: 3px solid $silver-chalice;
+                border: 1px solid $silver-chalice;
                 width: 50%;
+                font-family: "Lobster", cursive;
             }
             button {
                 border-radius: 5px;
-                border: 3px solid $silver-chalice;
+                border: 1px solid $silver-chalice;
                 margin-left: 3px;
                 cursor: pointer;
                 color: $eerie-black;
@@ -164,10 +164,11 @@ html {
             flex-direction: column;
             align-items: center;
             .card {
-                background-color: $un-blue;
+                background-color: transparent;
                 height: 150px;
                 width: 150px;
-                border-radius: 10px;
+                border-radius: 30px;
+                border: 1px solid #333;
             }
         }
     }
@@ -182,10 +183,54 @@ html {
         }
 
         .card{
-            background-color: $bdazzled-blue;
+            background-color: #333;
+            box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+            color: #fff;
             height: 300px;
-            border-radius: 10px;
+            border-radius: 30px;
             cursor: pointer;
+            &:hover{
+                rotate: 5deg;
+            }
+            h1, h2 {
+                margin: 0;
+            }
+            .current-weather-container {
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                gap: 32px;
+                .top{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .left{
+                        .city-name{
+                            font-size: 32px;
+                        }
+                    }
+                }
+                .bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .temperature{
+                        font-size: 52px;
+                        // margin: 0;
+                    }
+                }
+            }
+            .current-weather-main{
+                display: flex;
+                flex-direction: column;
+                h1, h2 {
+                    margin: 0;
+                }
+                h2 {
+                    align-self: center;
+                }
+            }
+            
         }
     }
 }
@@ -235,9 +280,9 @@ html {
 
 /* Details ends */
 
-@media (min-width: 1250px) {
+@media (min-width: 1290px) {
     body{
-        margin: 5% 5% 0 5%;
+        margin: 50px 150px 0 150px;
     }
     .login-container{
         display: flex;
@@ -264,6 +309,8 @@ html {
     .main-container{
         display: flex;
         margin-top: 10%;
+        padding: 0 300px 0 300px;
+        justify-content: center;
         .left-card-container{
             flex-basis: 50%;
             margin: 0;
@@ -282,7 +329,7 @@ html {
                     justify-content: space-between;
                     .card{
                         width: 200px;
-                        height: 200px;
+                        height: 100px;
                     }
                 }
             }
