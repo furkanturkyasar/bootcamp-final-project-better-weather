@@ -1,17 +1,24 @@
 @import '_variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 
 html {
-    font-family: 'Lobster', cursive;
-    background-color: $bg-color;
-    color: $eerie-black;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    height: 100vh;
+}
+
+body{
+    background-color: #EFF1ED;
+    margin: 0 5px;
 }
 
 /* Login page starts */
 
 .login-container {
-    margin:  5% 10%;
     box-sizing: border-box;
     padding: 10px;
+    gap: 20px;
     #header{
         display: flex;
         flex-direction: column;
@@ -20,21 +27,21 @@ html {
             height: 80px;
             position: relative;
             }
-        h1 {
+        h2 {
             position: absolute;
-            margin-left: 100px;
+            margin-left: 90px;
         }
         #left-section {
             .wrapper {
                 display: flex;
                 flex-direction: column;
-                h2{
+                h3{
                     text-align: center;
                 }
                 input[type=text], input[type=password] {
                     width: 100%;
                     margin: 15px 0;
-                    border: 1px solid $silver-chalice;
+                    border: 1px solid #333;
                     border-radius: 5px;
                     height: 30px;
                     box-sizing: border-box;
@@ -44,13 +51,13 @@ html {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-family: 'Lobster', cursive;
+                    font-family: 'Roboto', sans-serif;
                     font-size: 16px;
                     margin: 15px 0;
                     height: 30px;
                     width: 100%;
                     border-radius: 5px;
-                    background-color: $eerie-black;
+                    background-color: #333;
                     color: $bg-color;
                     cursor: pointer;
                     &:hover {
@@ -64,15 +71,32 @@ html {
     
     .image-container{
         display: none;
+        img{
+            width: 600px;
+            height: 370px;
+        }
     }
 }
 
 /* Login page ends */
 
+
 /* Navbar starts */
 
+.contact {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #2B4162;
+    .contact-options{
+        a{
+            padding: 10px;
+        }
+
+    }
+}
+
 .nav-container {
-    margin: 5% 2%;
+    margin: 4px 2%;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -84,11 +108,11 @@ html {
             height: 80px;
             position: relative;
             }
-        h1 {
+        h2 {
             position: absolute;
             margin-left: 90px;
         }
-        h3{
+        h4{
             position: absolute;
             margin-top: 70px;
             margin-left: 180px;
@@ -100,14 +124,14 @@ html {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Lobster', cursive;
+            font-family: 'Roboto', sans-serif;
             font-size: 16px;
             height: 30px;
             width: 100%;
             border-radius: 5px;
-            background-color: white;
-            color: $eerie-black;
-            border: 1px solid $silver-chalice;
+            background-color: #FEF9FF;
+            color: #333;
+            border: 1px solid #333;
             cursor: pointer;
             &:hover {
                 opacity: 0.7;
@@ -123,8 +147,8 @@ html {
 .main-container {
     gap: 50px;
     .left-card-container {
-        margin-top: 17%;
-        margin-bottom: 17%;
+        margin-top: 7%;
+        margin-bottom: 7%;
 
         p {
             display: flex;
@@ -140,35 +164,45 @@ html {
             height: 30px;
             margin-bottom: 55px;
             input {
-                border-radius: 5px;
-                border: 1px solid $silver-chalice;
+                border-radius: 10px;
+                border: 1px solid #333;
                 width: 50%;
-                font-family: "Lobster", cursive;
+                font-family: 'Roboto', sans-serif;
+                
             }
             button {
                 border-radius: 5px;
-                border: 1px solid $silver-chalice;
+                border: 1px solid #333;
                 margin-left: 3px;
                 cursor: pointer;
-                color: $eerie-black;
+                color: #333;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 70px;
+                
             }
         }
         .minified-card{
             padding: 20px;
             display: flex;
-            gap: 12px;
+            gap: 35px;
             flex-direction: column;
             align-items: center;
             .card {
-                background-color: transparent;
-                height: 150px;
-                width: 150px;
-                border-radius: 30px;
-                border: 1px solid #333;
+                background-color: #333;
+                height: 40px;
+                width: 200px;
+                border-radius: 10px;
+                color: #FEF9FF;
+                box-shadow: -4px -2px 2.5px 1.5px $sun-orange;
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    margin: 10px;
+                    display: flex;
+                    justify-content: center;
+                }
             }
         }
     }
@@ -185,12 +219,13 @@ html {
         .card{
             background-color: #333;
             box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
-            color: #fff;
+            color: #FEF9FF;
             height: 300px;
             border-radius: 30px;
             cursor: pointer;
             &:hover{
                 rotate: 5deg;
+                transition: 0.7s;
             }
             h1, h2 {
                 margin: 0;
@@ -198,25 +233,27 @@ html {
             .current-weather-container {
                 display: flex;
                 flex-direction: column;
-                padding: 20px;
-                gap: 32px;
+                padding: 10px;
                 .top{
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
+                    flex-direction: column;
                     align-items: center;
-                    .left{
-                        .city-name{
-                            font-size: 32px;
-                        }
+                    padding: 10px;
+                    
+                    .city-name{
+                        font-size: 35px;
                     }
+                    
                 }
                 .bottom {
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
+                    flex-direction: column;
                     align-items: center;
+                    
                     .temperature{
-                        font-size: 52px;
-                        // margin: 0;
+                        font-size: 42px;
                     }
                 }
             }
@@ -245,18 +282,59 @@ html {
 .details-container {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 4px;
     .current-weather {
-        background: linear-gradient(180deg, rgba(2,0,36,1) 6%, rgba(52,89,149,1) 45%, rgba(52,89,149,1) 90%);
-        height: 250px;
-        border-radius: 10px;
-        color: $bg-color;
+        background-color: #333;
+        height: 300px;
+        border-radius: 30px;
+        color: #FEF9FF;
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .left{
+                
+                .city-name{
+                    font-size: 30px;
+                }
+                
+                .weather-description{
+                    margin-bottom: 15px;
+                }
+            }
+            .right{
+                
+                .city-icon{
+                    img{
+                        width: 60px;
+                    }
+                }
+                .temperature{
+                    font-size: 40px;
+                }
+            }
+        }
+        .bottom{
+            .details{
+                gap: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+            }
+        }
     }
     .daily-forecast-weather {
-        background-color: $un-blue;
-        height: 250px;
-        border-radius: 10px;
-        color: $bg-color;
+        background-color: #333;
+        height: 280px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #FEF9FF;
+        #daily-img{
+            width: 50px;
+        }
     }
     .homeIcon{
         display: flex;
@@ -266,13 +344,13 @@ html {
             align-items: center;
             height: 30px;
             cursor: pointer;
-            border: 2px solid $silver-chalice;
-            border-radius: 5px;
+            border: 1px solid #333;
+            border-radius: 10px;
             span {
                 margin-right: 3px;
-                font-family: "Lobster", cursive;
+                font-family: 'Roboto', sans-serif;
                 font-size: 16px;
-                color: $eerie-black;
+                color: #333;
             }
         }
     }
@@ -280,9 +358,23 @@ html {
 
 /* Details ends */
 
-@media (min-width: 1290px) {
+/* Responsive starts */
+
+@media (min-width: 800px) {
+    .right-card-container{
+        margin: 80px;
+    }
+    .nav-container{
+        margin: 40px;
+    }
+    .details-container{
+        gap: 40px;
+    }
+}
+
+@media (min-width: 1250px) {
     body{
-        margin: 50px 150px 0 150px;
+        margin: 10px 150px 0 150px;
     }
     .login-container{
         display: flex;
@@ -304,13 +396,14 @@ html {
     .nav-container{
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 150px;
+        margin-bottom: 100px;
     }
     .main-container{
         display: flex;
         margin-top: 10%;
         padding: 0 300px 0 300px;
         justify-content: center;
+        min-width: 600px;
         .left-card-container{
             flex-basis: 50%;
             margin: 0;
@@ -324,12 +417,15 @@ html {
                 margin-top: 35px;
                 .minified-card{
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     padding: 0;
                     justify-content: space-between;
                     .card{
                         width: 200px;
                         height: 100px;
+                        ul{
+                            margin: 38px;
+                        }
                     }
                 }
             }
@@ -340,6 +436,64 @@ html {
             p{
                 display: none;
             }
+            .card{
+                height: 435px;
+                box-shadow: -4px -2px 2.5px 1.5px $sun-orange;
+                .top{
+                    
+                    .city-name{
+                        margin-bottom: 10px;
+                    }
+                    .city-icon {
+                        margin-top: 40px;
+                    }
+                }
+                .bottom{
+                    margin-top: 40px;
+
+                }
+            }
         }
     }
+
+    .details-container{
+    .current-weather{
+        box-shadow: -4px -2px 2.5px 1.5px $sun-orange;
+        .top{
+            padding: 20px;
+        }
+        .bottom{
+            .details{
+                flex-direction: row;
+                justify-content: center;
+                gap: 80px;
+                padding: 25px;
+                margin: 40px;
+                border: 1px solid #FEF9FF;
+                border-radius: 30px;
+            }
+        }
+    }
+
+
+    }
+
+    .details-container .daily-forecast-weather {
+        box-shadow: -4px -2px 2.5px 1.5px $sun-orange;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+        .daily-item {
+            border: 1px solid #FEF9FF;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 50px;
+        }
+    }
+
 }
+
+/* Responsive ends */

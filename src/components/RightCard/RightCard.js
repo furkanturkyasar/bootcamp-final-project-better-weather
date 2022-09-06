@@ -19,27 +19,21 @@ const RightCard = () => {
       <div className="card" onClick={showDetails}>
         <div className="current-weather-container">
           <div className="top">
-            <div className="left">
-              <div className="city-name">{weather.name}</div>
-              <div className="weather-description">
-                {weather.weather[0].description}
-              </div>
-            </div>
-            <div className="right">
-              <div className="city-icon">
-                <img src={`icons/${weather.weather[0].icon}.png`} alt="icon" />
-              </div>
+            <label className="city-name">{weather.name}</label>
+            <label className="weather-description">
+              {weather.weather[0].description}
+            </label>
+            <div className="city-icon">
+              <img src={`icons/${weather.weather[0].icon}.png`} alt="icon" />
             </div>
           </div>
           <div className="bottom">
             <div className="temperature">
               {Math.floor(weather.main.temp)} °C
             </div>
-            <div className="details">
-              <div className="feels-like">
-                <span>feels like </span>
-                {Math.floor(weather.main.feels_like)} °C
-              </div>
+            <div className="feels-like">
+              <span>feels like </span>
+              {Math.floor(weather.main.feels_like)} °C
             </div>
           </div>
         </div>

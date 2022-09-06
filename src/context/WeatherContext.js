@@ -27,7 +27,15 @@ export const WeatherProvider = ({ children }) => {
 
   const [forecast, setForecast] = useState(defaultForecast);
 
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
 
   const value = {
     weather,

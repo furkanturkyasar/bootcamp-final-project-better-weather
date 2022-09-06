@@ -19,16 +19,24 @@ const Navbar = () => {
   };
 
   return (
-    <div className="nav-container">
-      <div id="header">
-        <img src={process.env.PUBLIC_URL + "/logo.png"} alt="logo" />
-        <h1>Better Weather</h1>
-        <h3>for better plans</h3>
+    <>
+      {/* <div className="contact">
+        <div className="contact-options">
+          <a href="https://github.com/furkanturkyasar">GitHub</a>
+          <a href="https://www.linkedin.com/in/furkan-turkyasar/">Linkedin</a>
+        </div>
+      </div> */}
+      <div className="nav-container">
+        <div id="header">
+          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="logo" />
+          <h2>Better Weather</h2>
+          <h4>for better plans</h4>
+        </div>
+        <div className="nav-right-section">
+          <button onClick={handleLogout}>Log out</button>
+        </div>
       </div>
-      <div className="nav-right-section">
-        <button onClick={handleLogout}>Log out</button>
-      </div>
-    </div>
+    </>
   );
 };
 

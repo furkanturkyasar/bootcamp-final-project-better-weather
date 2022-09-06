@@ -39,16 +39,12 @@ const Details = () => {
       <div className="details-container">
         <div className="homeIcon">
           <button onClick={goHome}>
-            <span>Go back to home page</span>
+            <span>Go back</span>
             <BiArrowBack />
           </button>
         </div>
-        <div className="current-weather">
-          <CurrentWeatherCard />
-        </div>
-        <div className="daily-forecast-weather">
-          {forecast && <DailyWeatherCard />}
-        </div>
+        <CurrentWeatherCard />
+        {forecast && <DailyWeatherCard />}
       </div>
     </>
   );

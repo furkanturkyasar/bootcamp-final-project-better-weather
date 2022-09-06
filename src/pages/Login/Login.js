@@ -59,11 +59,11 @@ const Login = () => {
           src={process.env.PUBLIC_URL + "/logo.png"}
           alt="logo"
         />
-        <h1>Better Weather</h1>
+        <h2>Better Weather</h2>
         <div id="left-section">
           <form onSubmit={handleSubmit}>
             <div className="wrapper">
-              <h2>Log in</h2>
+              <h3>Log in</h3>
               <label className="label" htmlFor="username">
                 <b>Username</b>
               </label>
