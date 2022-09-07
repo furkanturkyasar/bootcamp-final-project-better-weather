@@ -1,13 +1,12 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { toast } from "react-toastify";
 import { WEATHER_API_URL, API_KEY } from "../../services/api.js";
-import { WeatherContext } from "../../context/WeatherContext";
 import MinifiedCard from "../MinifiedCard";
-import { useState, useContext } from "react";
+import withStates from "../../hocs/withStates.js";
+import React, { useState } from "react";
 
-const LeftCard = () => {
+const LeftCard = ({ setWeather, setCities, cities }) => {
   const [search, setSearch] = useState("");
-  const { setWeather, setCities, cities } = useContext(WeatherContext);
 
   const handleOnChange = (e) => {
     setSearch(e.target.value);
@@ -67,4 +66,4 @@ const LeftCard = () => {
   );
 };
 
-export default LeftCard;
+export default withStates(LeftCard);

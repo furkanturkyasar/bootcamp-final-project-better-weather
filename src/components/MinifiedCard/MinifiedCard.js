@@ -1,5 +1,4 @@
-// import { AiOutlineArrowRight } from "react-icons/ai";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import WeatherContext from "../../context/WeatherContext";
 
 const MinifiedCard = () => {

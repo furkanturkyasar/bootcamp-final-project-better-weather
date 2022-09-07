@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
+import { UserProvider } from "./context/UserContext";
+import { WeatherProvider } from "./context/WeatherContext";
+import ErrorBoundary from "./components/ErrorBoundary.js";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import "./styles/main.scss";
-import { UserProvider } from "./context/UserContext";
-import { WeatherProvider } from "./context/WeatherContext";
 
 function App() {
   return (
@@ -11,7 +12,14 @@ function App() {
       <WeatherProvider>
         <UserProvider>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={
+                <ErrorBoundary type="Home page">
+                  <Home />
+                </ErrorBoundary>
+              }
+            />
             <Route path="/details" element={<Details />} />
           </Routes>
         </UserProvider>

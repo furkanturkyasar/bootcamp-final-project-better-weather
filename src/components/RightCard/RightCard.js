@@ -1,11 +1,9 @@
-import { AiOutlineArrowRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { WeatherContext } from "../../context/WeatherContext";
-import React, { useContext } from "react";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import withStates from "../../hocs/withStates";
 
-const RightCard = () => {
+const RightCard = ({ weather }) => {
   let navigate = useNavigate();
-  const { weather } = useContext(WeatherContext);
 
   const showDetails = () => {
     navigate("/details");
@@ -42,4 +40,4 @@ const RightCard = () => {
   );
 };
 
-export default RightCard;
+export default withStates(RightCard);

@@ -1,17 +1,15 @@
 import { BiArrowBack } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
 
 import { WEATHER_API_URL, API_KEY } from "../../services/api";
 import Navbar from "../../components/Navbar";
 import CurrentWeatherCard from "../../components/CurrentWeatherCard";
 import DailyWeatherCard from "../../components/DailyWeatherCard";
-import { WeatherContext } from "../../context/WeatherContext";
 import React, { useEffect } from "react";
+import withStates from "../../hocs/withStates";
 
-const Details = () => {
+const Details = ({ forecast, setForecast, weather }) => {
   let navigation = useNavigate();
-  const { forecast, weather, setForecast } = useContext(WeatherContext);
 
   const goHome = () => {
     navigation("/");
@@ -50,4 +48,4 @@ const Details = () => {
   );
 };
 
-export default React.memo(Details);
+export default React.memo(withStates(Details));

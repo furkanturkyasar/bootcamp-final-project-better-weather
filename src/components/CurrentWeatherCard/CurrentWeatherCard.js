@@ -4,7 +4,7 @@ import { WeatherContext } from "../../context/WeatherContext";
 const CurrentWeatherCard = () => {
   const { weather, days } = useContext(WeatherContext);
 
-  let d = new Date(weather.dt * 1000);
+  let d = new Date(weather.dt);
   let today = days[d.getDay()];
 
   return (
