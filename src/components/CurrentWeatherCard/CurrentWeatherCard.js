@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
 
 const CurrentWeatherCard = () => {
-  const { weather } = useContext(WeatherContext);
+  const { weather, days } = useContext(WeatherContext);
+
+  let d = new Date(weather.dt * 1000);
+  let today = days[d.getDay()];
 
   return (
     <div className="current-weather">
@@ -11,11 +14,14 @@ const CurrentWeatherCard = () => {
           <div className="city-name">{weather.name}</div>
           <div className="weather-description">
             {weather.weather[0].description}
+            <div className="feels-like">
+              <span>Feels Like </span>
+              {Math.round(weather.main.feels_like)} °C
+            </div>
           </div>
-          <div className="feels-like">
-            <span>Feels Like </span>
-            {Math.round(weather.main.feels_like)} °C
-          </div>
+        </div>
+        <div className="mid">
+          <div className="today">{today}</div>
         </div>
         <div className="right">
           <div className="city-icon">
@@ -26,29 +32,29 @@ const CurrentWeatherCard = () => {
       </div>
       <div className="bottom">
         <div className="details">
-          <div className="wind-speed">
+          <div className="wind-speed detail">
             <span>Wind speed </span>
-            {weather.wind.speed} m/s
+            {weather.wind.speed}m/s
           </div>
-          <div className="wind-deg">
+          <div className="wind-deg detail">
             <span>Wind degree </span>
-            {weather.wind.deg} deg
+            {weather.wind.deg}deg
           </div>
-          <div className="humidity">
-            <span>Humidity </span>
-            {weather.main.humidity} %
+          <div className="humidity detail">
+            <span>Humidity</span>
+            {weather.main.humidity}%
           </div>
-          <div className="pressure">
+          <div className="pressure detail">
             <span>Pressure </span>
-            {weather.main.pressure} mBar
+            {weather.main.pressure}mBar
           </div>
-          <div className="temp-max">
+          <div className="temp-max detail">
             <span>Temp max </span>
-            {weather.main.temp_max} °C
+            {weather.main.temp_max}°C
           </div>
-          <div className="temp_min">
+          <div className="temp_min detail">
             <span>Temp min </span>
-            {weather.main.temp_min} °C
+            {weather.main.temp_min}°C
           </div>
         </div>
       </div>
