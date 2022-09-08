@@ -1,9 +1,7 @@
-import { WeatherContext } from "../../context/WeatherContext";
-import React, { useContext } from "react";
+import withStates from "../../hocs/withStates";
+import React from "react";
 
-const DailyWeatherCard = () => {
-  const { forecast, days } = useContext(WeatherContext);
-
+const DailyWeatherCard = ({ forecast, days }) => {
   const sevenDays = forecast.list.slice(0, 5);
 
   const currentDay = new Date().getDay();
@@ -30,4 +28,4 @@ const DailyWeatherCard = () => {
   );
 };
 
-export default DailyWeatherCard;
+export default withStates(DailyWeatherCard);

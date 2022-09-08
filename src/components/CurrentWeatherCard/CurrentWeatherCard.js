@@ -1,12 +1,8 @@
-import { WeatherContext } from "../../context/WeatherContext";
-import { useContext } from "react";
+import withStates from "../../hocs/withStates";
 
-const CurrentWeatherCard = () => {
-  const { weather, days } = useContext(WeatherContext);
-
+const CurrentWeatherCard = ({ weather, days }) => {
   let d = new Date(weather.dt);
   let today = days[d.getDay()];
-  console.log(weather);
 
   return (
     <div className="current-weather">
@@ -63,4 +59,4 @@ const CurrentWeatherCard = () => {
   );
 };
 
-export default CurrentWeatherCard;
+export default withStates(CurrentWeatherCard);

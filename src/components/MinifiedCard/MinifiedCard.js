@@ -1,9 +1,6 @@
-import React, { useContext } from "react";
-import WeatherContext from "../../context/WeatherContext";
+import withStates from "../../hocs/withStates";
 
-const MinifiedCard = () => {
-  const { cities } = useContext(WeatherContext);
-
+const MinifiedCard = ({ cities }) => {
   const slicedCities = cities.slice(Math.max(cities.length - 3, 0)).reverse();
 
   return (
@@ -19,4 +16,4 @@ const MinifiedCard = () => {
   );
 };
 
-export default MinifiedCard;
+export default withStates(MinifiedCard);

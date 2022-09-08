@@ -28,11 +28,11 @@ const RightCard = ({ weather }) => {
           </div>
           <div className="bottom">
             <div className="temperature">
-              {Math.floor(weather.main.temp)} °C
+              {Math.round(weather.main.temp)} °C
             </div>
             <div className="feels-like">
               <span>feels like </span>
-              {Math.floor(weather.main.feels_like)} °C
+              {Math.round(weather.main.feels_like)} °C
             </div>
           </div>
         </div>
