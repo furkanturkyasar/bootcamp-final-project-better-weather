@@ -9,8 +9,9 @@ html {
 }
 
 body{
-    background-color: #EFF1ED;
     margin: 0 5px;
+    background-color: #f4f4f4;
+    font-size: 15px;
 }
 
 /* Login page starts */
@@ -86,10 +87,12 @@ body{
 .contact {
     display: flex;
     justify-content: flex-end;
-    background-color: #2B4162;
+    background-color: transparent;
+    height: 30px;
+    margin: 10px 5px 0 5px;
     .contact-options{
         a{
-            padding: 10px;
+            padding: 0 0 0 10px;
         }
 
     }
@@ -101,6 +104,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100px;
+    border-radius: 20px;
     #header {
         display: flex;
         img {
@@ -180,7 +185,9 @@ body{
                 align-items: center;
                 justify-content: center;
                 width: 70px;
-                
+                &:hover{
+                    opacity: 0.7;
+                }
             }
         }
         .minified-card{
@@ -290,10 +297,11 @@ body{
         color: #FEF9FF;
         .top {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             .left{
-                
+                display: flex;
+                flex-direction: column;
                 .city-name{
                     font-size: 30px;
                 }
@@ -303,9 +311,15 @@ body{
                 }
             }
             .mid{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 font-size: 20px;
             }
             .right{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 
                 .city-icon{
                     img{
@@ -323,7 +337,7 @@ body{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                
+                margin-left: 30px;
             }
         }
     }
@@ -368,20 +382,61 @@ body{
 /* Responsive starts */
 
 @media (min-width: 800px) {
+    body{
+        font-size: 16px;
+    }
     .right-card-container{
         margin: 80px;
     }
     .nav-container{
-        margin: 40px;
+        margin: 0 0 30 0;
     }
     .details-container{
         gap: 40px;
+    }
+    .current-weather{
+        .top{
+            padding: 15px;
+            .left{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .today{
+                    font-size: 23px;
+                    margin-bottom: 10px;
+                    
+                }
+            }
+            .mid{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .city-name{
+                    font-size: 33px;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                }
+                .temperature{
+                    font-size: 36px;
+                }
+            }
+            .right{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .bottom{
+            .details{
+                margin-left: 50px;
+            }
+        }
     }
 }
 
 @media (min-width: 1250px) {
     body{
-        margin: 10px 150px 0 150px;
+        margin: 0px 100px 0 100px;
     }
     .login-container{
         display: flex;
@@ -407,7 +462,7 @@ body{
     }
     .main-container{
         display: flex;
-        margin-top: 10%;
+        margin-top: 4%;
         padding: 0 300px 0 300px;
         justify-content: center;
         min-width: 600px;
@@ -457,7 +512,9 @@ body{
                 }
                 .bottom{
                     margin-top: 40px;
-
+                    .temperature{
+                        margin-bottom: 10px;
+                    }
                 }
             }
         }
@@ -474,7 +531,7 @@ body{
                 }
             }
             .mid{
-                font-size: 50px;
+                font-size: 40px;
             }
         }
         .bottom{
@@ -493,6 +550,7 @@ body{
                     justify-content: center;
                     align-items: center;
                     border-radius: 30px;
+                    padding: 5px;
                     span{
                         margin-right: 5px;
                     }

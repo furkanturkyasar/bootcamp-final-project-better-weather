@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
-import { useContext } from "react";
 import UserContext from "../../context/UserContext";
+import { useContext } from "react";
 
 const Login = () => {
   const { user, setUser, login } = useContext(UserContext);

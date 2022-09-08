@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import WeatherContext from "../context/WeatherContext";
+import { useContext } from "react";
 
 const withStates = (WrappedComponent) => {
   return (props) => {

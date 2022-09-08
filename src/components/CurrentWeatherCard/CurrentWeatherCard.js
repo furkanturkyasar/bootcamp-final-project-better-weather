@@ -1,33 +1,34 @@
-import { useContext } from "react";
 import { WeatherContext } from "../../context/WeatherContext";
+import { useContext } from "react";
 
 const CurrentWeatherCard = () => {
   const { weather, days } = useContext(WeatherContext);
 
   let d = new Date(weather.dt);
   let today = days[d.getDay()];
+  console.log(weather);
 
   return (
     <div className="current-weather">
       <div className="top">
         <div className="left">
-          <div className="city-name">{weather.name}</div>
-          <div className="weather-description">
-            {weather.weather[0].description}
-            <div className="feels-like">
-              <span>Feels Like </span>
-              {Math.round(weather.main.feels_like)} °C
-            </div>
+          <div className="today">{today}</div>
+          <div className="feels-like">
+            <span>Feels Like </span>
+            {Math.round(weather.main.feels_like)} °C
           </div>
         </div>
         <div className="mid">
-          <div className="today">{today}</div>
+          <div className="city-name">{weather.name}</div>
+          <div className="temperature">{Math.round(weather.main.temp)} °C</div>
         </div>
         <div className="right">
           <div className="city-icon">
             <img src={`icons/${weather.weather[0].icon}.png`} alt="icon" />
           </div>
-          <div className="temperature">{Math.round(weather.main.temp)} °C</div>
+          <div className="weather-description">
+            {weather.weather[0].description}
+          </div>
         </div>
       </div>
       <div className="bottom">

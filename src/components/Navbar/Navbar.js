@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import UserContext from "../../context/UserContext";
+import { useContext, useEffect } from "react";
 
 const Navbar = () => {
   let navigation = useNavigate();
@@ -20,12 +21,19 @@ const Navbar = () => {
 
   return (
     <>
-      {/* <div className="contact">
+      <div className="contact">
         <div className="contact-options">
-          <a href="https://github.com/furkanturkyasar">GitHub</a>
-          <a href="https://www.linkedin.com/in/furkan-turkyasar/">Linkedin</a>
+          <a href="https://github.com/furkanturkyasar" target="blank">
+            <AiFillGithub size="30px" color="black" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/furkan-turkyasar/"
+            target="blank"
+          >
+            <AiFillLinkedin size="30px" color="black" />
+          </a>
         </div>
-      </div> */}
+      </div>
       <div className="nav-container">
         <div id="header">
           <img src={process.env.PUBLIC_URL + "/logo.png"} alt="logo" />

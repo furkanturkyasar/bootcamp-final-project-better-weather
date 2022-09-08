@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowRight } from "react-icons/ai";
+
 import withStates from "../../hocs/withStates";
 
 const RightCard = ({ weather }) => {
   let navigate = useNavigate();
 
   const showDetails = () => {
-    navigate("/details");
+    navigate(`/details`);
   };
 
   return (

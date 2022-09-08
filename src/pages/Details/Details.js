@@ -5,8 +5,8 @@ import { WEATHER_API_URL, API_KEY } from "../../services/api";
 import Navbar from "../../components/Navbar";
 import CurrentWeatherCard from "../../components/CurrentWeatherCard";
 import DailyWeatherCard from "../../components/DailyWeatherCard";
-import React, { useEffect } from "react";
 import withStates from "../../hocs/withStates";
+import React, { useEffect } from "react";
 
 const Details = ({ forecast, setForecast, weather }) => {
   let navigation = useNavigate();
@@ -29,6 +29,7 @@ const Details = ({ forecast, setForecast, weather }) => {
 
   useEffect(() => {
     forecastFetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
