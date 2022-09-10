@@ -1,7 +1,7 @@
 import withStates from "../../hocs/withStates";
 
 const CurrentWeatherCard = ({ weather, days }) => {
-  let d = new Date(weather.dt);
+  let d = new Date();
   let today = days[d.getDay()];
 
   return (

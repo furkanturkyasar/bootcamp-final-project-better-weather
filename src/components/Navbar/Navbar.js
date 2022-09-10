@@ -19,6 +19,10 @@ const Navbar = () => {
     navigation("/");
   };
 
+  const handleClick = () => {
+    navigation("/");
+  };
+
   return (
     <>
       <div className="contact">
@@ -36,7 +40,11 @@ const Navbar = () => {
       </div>
       <div className="nav-container">
         <div id="header">
-          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="logo" />
+          <img
+            onClick={handleClick}
+            src={process.env.PUBLIC_URL + "/logo.png"}
+            alt="logo"
+          />
           <h2>Better Weather</h2>
           <h4>for better plans</h4>
         </div>

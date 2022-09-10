@@ -11,6 +11,8 @@ const withStates = (WrappedComponent) => {
       setForecast,
       cities,
       setCities,
+      getCurrentWeather,
+      forecastFetch,
     } = useContext(WeatherContext);
     return (
       <WrappedComponent
@@ -21,6 +23,8 @@ const withStates = (WrappedComponent) => {
         setForecast={setForecast}
         cities={cities}
         setCities={setCities}
+        getCurrentWeather={getCurrentWeather}
+        forecastFetch={forecastFetch}
         {...props}
       />
     );

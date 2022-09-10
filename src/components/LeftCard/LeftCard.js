@@ -1,11 +1,10 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { toast } from "react-toastify";
-import { WEATHER_API_URL, API_KEY } from "../../services/api.js";
 import MinifiedCard from "../MinifiedCard";
 import withStates from "../../hocs/withStates.js";
 import React, { useState } from "react";
 
-const LeftCard = ({ setWeather, setCities, cities }) => {
+const LeftCard = ({ getCurrentWeather }) => {
   const [search, setSearch] = useState("");
 
   const handleOnChange = (e) => {
@@ -15,7 +14,7 @@ const LeftCard = ({ setWeather, setCities, cities }) => {
   const handleSearch = () => {
     const trimmedSearch = search.trim();
 
-    if (!trimmedSearch.length > 0) {
+    if (!trimmedSearch) {
       return toast.info("Empty input value!", {
         position: "top-right",
         autoClose: 4000,
@@ -27,21 +26,7 @@ const LeftCard = ({ setWeather, setCities, cities }) => {
       });
     }
 
-    fetch(
-      `${WEATHER_API_URL}/weather?q=${trimmedSearch}&appid=${API_KEY}&units=metric`
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        setWeather(response);
-        localStorage.setItem("weather", JSON.stringify(response));
-        setCities([...cities, response.name]);
-        localStorage.setItem(
-          "city",
-          JSON.stringify([...cities, response.name])
-        );
-      })
-      .catch((err) => console.log(err));
-
+    getCurrentWeather(trimmedSearch);
     setSearch("");
   };
 

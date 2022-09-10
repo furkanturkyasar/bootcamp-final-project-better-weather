@@ -7,7 +7,7 @@ const DailyWeatherCard = ({ forecast, days }) => {
   const currentDay = new Date().getDay();
 
   const forecastDays = days
-    .slice(currentDay, days.length)
+    .slice(currentDay, days.length - 1)
     .concat(days.slice(0, currentDay));
 
   return (
