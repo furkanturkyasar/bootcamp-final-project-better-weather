@@ -298,21 +298,19 @@ body{
         height: 300px;
         border-radius: 30px;
         color: #FEF9FF;
-        // .warm .current-weather{
-        //     background-color: $sun-orange;
-        // }
-        // .cold .current-weather{
-        //     background-color: #333;
-        // }
         .top {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             .left{
                 display: flex;
                 flex-direction: column;
-                .city-name{
-                    font-size: 30px;
+                gap: 12px;
+                .today{
+                    font-size: 20px;
+                }
+                .feels-like {
+                    font-size: 12px;
                 }
                 
                 .weather-description{
@@ -411,9 +409,8 @@ body{
                 flex-direction: column;
                 align-items: center;
                 .today{
-                    font-size: 23px;
+                    font-size: 26px;
                     margin-bottom: 10px;
-                    
                 }
             }
             .mid{
@@ -537,6 +534,9 @@ body{
             .left{
                 .city-name{
                     font-size: 40px;
+                }
+                .today{
+                    font-size: 29px;
                 }
             }
             .mid{
