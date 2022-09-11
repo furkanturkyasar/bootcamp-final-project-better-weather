@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import withStates from "../../hocs/withStates";
 
-const CurrentWeatherCard = ({ weather, days }) => {
+const CurrentWeatherCard = ({ weather, days, setTheme }) => {
   let d = new Date();
   let today = days[d.getDay()];
+
+  useEffect(() => {
+    setTheme();
+  });
 
   return (
     <div className="current-weather">

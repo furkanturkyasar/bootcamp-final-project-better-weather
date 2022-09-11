@@ -1,5 +1,8 @@
 import { useState, createContext } from "react";
 import { WEATHER_API_URL, API_KEY } from "../services/api";
+import summer from "../background/summer.png";
+import fall from "../background/fall.png";
+import winter from "../background/winter.png";
 
 export const WeatherContext = createContext();
 
@@ -27,6 +30,8 @@ export const WeatherProvider = ({ children }) => {
   const [weather, setWeather] = useState(defaultWeather);
 
   const [forecast, setForecast] = useState(defaultForecast);
+
+  const [background, setBackground] = useState(null);
 
   const getCurrentWeather = (trimmedSearch) => {
     fetch(
@@ -57,6 +62,27 @@ export const WeatherProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+  const setTheme = () => {
+    if (!weather.main.temp) {
+      return;
+    }
+
+    switch (true) {
+      case weather.main.temp > 16:
+        setBackground(summer);
+        document.body.style.backgroundImage = `url(${background})`;
+        break;
+      case weather.main.temp < 1:
+        setBackground(winter);
+        document.body.style.backgroundImage = `url(${background})`;
+        break;
+      default:
+        setBackground(fall);
+        document.body.style.backgroundImage = `url(${background})`;
+        break;
+    }
+  };
+
   const days = [
     "Sunday",
     "Monday",
@@ -77,6 +103,7 @@ export const WeatherProvider = ({ children }) => {
     setCities,
     getCurrentWeather,
     forecastFetch,
+    setTheme,
   };
 
   return (
