@@ -1,6 +1,6 @@
 # Better Weather App
 
-### live site :
+### live site : https://kodluyoruz-final-project-weather.netlify.app/
 
 name: admin password: admin
 
