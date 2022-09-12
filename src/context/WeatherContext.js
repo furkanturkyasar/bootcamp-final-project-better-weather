@@ -39,6 +39,9 @@ export const WeatherProvider = ({ children }) => {
     )
       .then((response) => response.json())
       .then((response) => {
+        if (response.cod === "404") {
+          return alert("City not Found");
+        }
         setWeather(response);
         localStorage.setItem("weather", JSON.stringify(response));
         setCities([...cities, response.name]);
