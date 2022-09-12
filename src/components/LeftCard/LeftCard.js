@@ -5,7 +5,7 @@ import MinifiedCard from "../MinifiedCard";
 import withStates from "../../hocs/withStates.js";
 import React, { useState } from "react";
 
-const LeftCard = ({ getCurrentWeather }) => {
+const LeftCard = ({ getCurrentWeather, weather }) => {
   let navigation = useNavigate();
   const [search, setSearch] = useState("");
 
@@ -48,7 +48,7 @@ const LeftCard = ({ getCurrentWeather }) => {
         <button onClick={handleSearch}>
           <AiOutlineSearch />
         </button>
-        <button onClick={showMap}>Map</button>
+        {weather && <button onClick={showMap}>Map</button>}
       </div>
       <div className="bottom">
         {" "}
