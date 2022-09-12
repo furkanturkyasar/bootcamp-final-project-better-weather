@@ -8407,6 +8407,11 @@ tsutils@^3.21.0:
   dependencies:
     tslib "^1.8.1"
 
+turkey-map-react@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/turkey-map-react/-/turkey-map-react-1.1.5.tgz#8dd236b75fa65377315090e7a9a0bac37870780d"
+  integrity sha512-RkEiF7q/KUzNbxgV0+Fc7YF45l4J1z22AgeorxzjkmlF+2UsgmntFFl6JcemN7Ge4bBEKpqpYJmjVucMZxLUwQ==
+
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.4.0.tgz#07b8203bfa7056c0657050e3ccd2c37730bab8f1"

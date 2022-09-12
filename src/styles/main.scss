@@ -389,6 +389,57 @@ body{
 
 /* Details ends */
 
+/* Map starts */
+
+.map-container{
+    .go-back{
+        button {
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 30px;
+            width: 90px;
+            height: 30px;
+            font-weight: 700;
+        }
+    }
+    .current-weather-container {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        border-radius: 30px;
+        box-shadow: -4px -2px 2.5px 1.5px #ffba6a;
+        color: #FEF9FF;
+        .top{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            
+            .city-name{
+                font-size: 32px;
+            }
+            
+        }
+        .bottom {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            
+            .temperature{
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+
+
+
+/* Map ends */
+
+
+
 /* Responsive starts */
 
 @media (min-width: 800px) {

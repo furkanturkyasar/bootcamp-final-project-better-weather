@@ -1,10 +1,12 @@
 import { AiOutlineSearch } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import MinifiedCard from "../MinifiedCard";
 import withStates from "../../hocs/withStates.js";
 import React, { useState } from "react";
 
 const LeftCard = ({ getCurrentWeather }) => {
+  let navigation = useNavigate();
   const [search, setSearch] = useState("");
 
   const handleOnChange = (e) => {
@@ -30,6 +32,10 @@ const LeftCard = ({ getCurrentWeather }) => {
     setSearch("");
   };
 
+  const showMap = () => {
+    navigation("/map");
+  };
+
   return (
     <div className="left-card-container">
       <div className="top">
@@ -42,6 +48,7 @@ const LeftCard = ({ getCurrentWeather }) => {
         <button onClick={handleSearch}>
           <AiOutlineSearch />
         </button>
+        <button onClick={showMap}>Map</button>
       </div>
       <div className="bottom">
         {" "}

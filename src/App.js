@@ -5,6 +5,7 @@ import ErrorBoundary from "./components/ErrorBoundary.js";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import "./styles/main.scss";
+import Map from "./components/Map";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 </ErrorBoundary>
               }
             />
+            <Route path="/map" element={<Map />} />
             <Route path="/details" element={<Details />} />
           </Routes>
         </UserProvider>
